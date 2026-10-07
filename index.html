@@ -56,7 +56,7 @@
             </a>
         </aside>
 
-        
+        <!-- Contenido principal de inicio-->
         <main class="dashboard-main-home hide">
             <header class="header-bar">
                 <h1 class="header-title">Bienvenido, Dr. Méndez</h1>
@@ -82,15 +82,22 @@
             <!-- Esto es el header de cuando esta seleccionado cuestionaro -->
             <header class="header-bar">
                 <h1 class="header-title">Cuestionario de Diagnóstico</h1>
-                <p>Encuentra el formulario ideal para tu proyecto</p>
+                <p style="color: var(--gris-texto)">Encuentra el formulario ideal para tu proyecto</p>
             </header>
 
             <div id ="questionnaire-container">
                 <section class="title-questionnaire">
-                <h2 class ="header-title">Antes de comenzar</h2>
-                <p style="margin-bottom: 50px;">Para guiarle hacia el formulario de vinculación correcto, requerimos registrar la información básica de su proyecto.</p>
-                <h1 style="font-size: 20px; font-weight: 600; color: #333;">Título del trabajo o actividad</h1>
-                <input id="project-title" type="text" placeholder="Ej: Diagnóstico comunitario en la paz, Comayagua">
+                    <h2 class ="header-title">Antes de comenzar</h2>
+                    <p style="color:#494949;">Para guiarle hacia el formulario de vinculación correcto, requerimos registrar la información básica de su proyecto.</p>
+                    <section id="border-questionnaire"></section>
+                    <label for="project-title" class="obligatorio" style="font-size: 20px; font-weight: 600; color: #333;">Título del trabajo o actividad</label>
+                    <input id="project-title" type="text" placeholder="Ej: Diagnóstico comunitario en la paz, Comayagua">
+                    <p style="font-size: 14px; color: #666;">Ingrese un título descriptivo que identifique su actividad de vinculación. Este título aparecerá en su recomendación y en el historial.</p>
+                    <section id="border-questionnaire"></section>
+                    <div id="buttons-questionnaire">
+                        <button type="button" class="btn-cancel">Cancelar</button>
+                        <button type="button" class="btn-start">Continuar al cuestionario</button>
+                    </div>
                 </section>
             </div>
             

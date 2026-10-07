@@ -256,8 +256,25 @@ body {
     transition: filter 0.2s;
 }
 
+.btn-cancel{
+    background: var(--fondo);
+    color: #121111;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-family: var(--font-texto);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
 .btn-start:hover {
     filter: brightness(1.08);
+}
+
+.btn-cancel:hover {
+    filter: brightness(0.95);
 }
 
 .compass-illustration {
@@ -271,11 +288,8 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-.compass-illustration img {
-    display: block;
-}
-
+/* 
+CUESTIONARIO MAIN */
 .dashboard-main-questionnaire {
     flex: 1;
     min-width: 0;
@@ -294,7 +308,7 @@ body {
     align-items: start;
     justify-content: center;
     gap: 8px;
-    width: 65%
+    width: 50%
 }
 
 #questionnaire-container {
@@ -304,7 +318,31 @@ body {
     width: 100%;
 }
 
+#border-questionnaire {
+    width: 100%;
+    height: 2px;
+    background: var(--borde);
+    margin: 20px 0;
+}
+
 #project-title{
     width: 100%;
+    height: 40px;
     padding: 10px;
+    background: var(--fondo);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
 }
+
+#buttons-questionnaire{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* FIN CUESTIORIO MAIN */
+.obligatorio::after {
+    content: " *";
+    color: red;
+  }
