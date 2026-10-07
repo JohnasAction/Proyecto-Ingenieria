@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Docente — Sistema DVUS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/7b3db987e5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="panel-docente">
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="logo-group">
+                    <div class="unah-shield">
+                        <div class="shield-inner">U</div>
+                    </div>
+                    <div class="logo-text">
+                        <p class="logo-title">Sistema DVUS</p>
+                        <p class="logo-subtitle">UNAH — Vinculación</p>
+                    </div>
+                </div>
+
+
+                <div class="user-profile">
+                    <div class="avatar-circle">CM</div>
+                    <div class="user-names">
+                        <p class="user-name">Dr. Carlos Méndez</p>
+                        <p class="user-role">Docente Investigador</p>
+                    </div>
+                </div>
+
+                <nav class="nav-list">
+                    <a href="#" class="nav-item active">
+                        <i class="fa-solid fa-house selected"></i>
+                        <span>Inicio</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fa-solid fa-clipboard-list unselected"></i>
+                        <span>Cuestionario</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fa-solid fa-award unselected"></i>
+                        <span>Recomendaciones</span>
+                    </a>
+                </nav>
+            </div>
+
+            <a href="#" class="nav-item nav-logout">
+                <i class="fa-solid fa-right-from-bracket unselected"></i>
+                <span>Cerrar sesión</span>
+            </a>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="dashboard-main">
+            <header class="header-bar">
+                <h1 class="header-title">Bienvenido, Dr. Méndez</h1>
+            </header>
+
+            <section class="hero-banner">
+                <div class="hero-content">
+                    <h2 class="hero-title">Encuentra el formulario adecuado para tu actividad de vinculación</h2>
+                    <p class="hero-text">Responde un breve cuestionario y el sistema identificará automáticamente el formulario correcto para registrar tu actividad.</p>
+                    <button type="button" class="btn-start">Iniciar cuestionario</button>
+                </div>
+                <div class="compass-illustration">
+                    <i class="fa-regular fa-compass" style="font-size: 60px;"></i>
+                </div>
+            </section>
+
+            <section class="dashboard-body"></section>
+        </main>
+    </div>
+</body>
+
+</html>
