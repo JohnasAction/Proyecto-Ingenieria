@@ -56,12 +56,13 @@
             </a>
         </aside>
 
-        <!-- Contenido principal -->
-        <main class="dashboard-main">
+        
+        <main class="dashboard-main-home hide">
             <header class="header-bar">
                 <h1 class="header-title">Bienvenido, Dr. Méndez</h1>
-            </header>
-
+            </header> 
+            
+            <!-- Esto es el header de cuando esta seleccionado inicio -->
             <section class="hero-banner">
                 <div class="hero-content">
                     <h2 class="hero-title">Encuentra el formulario adecuado para tu actividad de vinculación</h2>
@@ -73,7 +74,26 @@
                 </div>
             </section>
 
-            <section class="dashboard-body"></section>
+            
+        </main>
+
+        <!-- Contenido principal de cuestionario -->
+        <main class = "dashboard-main-questionnaire">
+            <!-- Esto es el header de cuando esta seleccionado cuestionaro -->
+            <header class="header-bar">
+                <h1 class="header-title">Cuestionario de Diagnóstico</h1>
+                <p>Encuentra el formulario ideal para tu proyecto</p>
+            </header>
+
+            <div id ="questionnaire-container">
+                <section class="title-questionnaire">
+                <h2 class ="header-title">Antes de comenzar</h2>
+                <p style="margin-bottom: 50px;">Para guiarle hacia el formulario de vinculación correcto, requerimos registrar la información básica de su proyecto.</p>
+                <h1 style="font-size: 20px; font-weight: 600; color: #333;">Título del trabajo o actividad</h1>
+                <input id="project-title" type="text" placeholder="Ej: Diagnóstico comunitario en la paz, Comayagua">
+                </section>
+            </div>
+            
         </main>
     </div>
 </body>
