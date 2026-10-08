@@ -112,6 +112,13 @@ body {
     gap: 12px;
 }
 
+#border-bottom-profile{
+    width: 100%;
+    height: 1px;
+    background: var(--azul-medio);
+    margin: 5px 0px 10px 0px;
+}
+
 .avatar-circle {
     width: 44px;
     height: 44px;
@@ -298,7 +305,7 @@ CUESTIONARIO MAIN */
     flex-direction: column;
 }
 
-.title-questionnaire {
+.title-questionnaire-input {
     background: rgb(255, 255, 255);
     padding: 25px;
     border: 2px solid var(--borde);
@@ -339,6 +346,237 @@ CUESTIONARIO MAIN */
     width: 100%;
     justify-content: space-between;
     margin-top: 20px;
+}
+
+.dashboard-main-questionnaire-questions{
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+}
+
+#questionnaire-questions-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.title-questionnaire-questions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px;
+    width: 86%;
+    background: var(--borde);
+    border-radius: 12px;
+    border: 2px solid var(--texto-hero);
+}
+
+/* Barra de progreso del cuestionario */
+.questionnaire-progress {
+    width: 86%;
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.progress-step {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.progress-step-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--azul-profundo);
+}
+
+.progress-question {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--texto-principal);
+}
+
+.progress-percent {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--azul-profundo);
+}
+
+.progress-track {
+    width: 100%;
+    height: 10px;
+    background: var(--borde);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--dorado);
+    border-radius: 999px 0 0 999px;
+    transition: width 0.4s ease;
+}
+
+/* Tarjeta de pregunta */
+.question-card {
+    width: 86%;
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.question-top {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-exit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    font-family: var(--font-texto);
+    font-weight: 500;
+    font-size: 14px;
+    color: #4a5568;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-exit:hover {
+    color: var(--texto-principal);
+}
+
+.question-title {
+    font-family: var(--font-titulo);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--texto-principal);
+}
+
+.question-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.option-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 22px;
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.option-card:hover {
+    border-color: var(--dorado);
+}
+
+/* El radio queda oculto: la tarjeta completa actúa como opción */
+.option-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.option-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--borde);
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.option-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.option-title {
+    font-family: var(--font-titulo);
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--texto-principal);
+}
+
+.option-description {
+    font-size: 13px;
+    line-height: 1.45;
+    color: #4a5568;
+}
+
+/* Estado seleccionado (se activa al marcar el radio) */
+.option-card:has(.option-input:checked) {
+    background: var(--crema);
+    border: 2px solid var(--dorado);
+    padding: 19px 21px;
+}
+
+.option-card:has(.option-input:checked) .option-icon {
+    background: var(--dorado);
+    color: #fff;
+}
+
+.option-card:has(.option-input:focus-visible) {
+    outline: 2px solid var(--azul-medio);
+    outline-offset: 2px;
+}
+
+.question-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-outline {
+    background: #fff;
+    color: var(--texto-principal);
+    border: 1px solid #4a5568;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-family: var(--font-texto);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-outline:hover {
+    background: var(--fondo);
 }
 
 /* FIN CUESTIORIO MAIN */

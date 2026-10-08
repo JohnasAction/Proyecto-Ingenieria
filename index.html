@@ -25,6 +25,7 @@
                     </div>
                 </div>
 
+                <section id="border-bottom-profile"></section>
 
                 <div class="user-profile">
                     <div class="avatar-circle">CM</div>
@@ -78,7 +79,7 @@
         </section>
 
         <!-- Contenido principal de cuestionario -->
-        <section class = "dashboard-main-questionnaire">
+        <section class = "dashboard-main-questionnaire hide">
             <!-- Esto es el header de cuando esta seleccionado cuestionaro -->
             <header class="header-bar">
                 <h1 class="header-title">Cuestionario de Diagnóstico</h1>
@@ -86,7 +87,7 @@
             </header>
 
             <div id ="questionnaire-container">
-                <section class="title-questionnaire">
+                <section class="title-questionnaire-input">
                     <h2 class ="header-title">Antes de comenzar</h2>
                     <p style="color:#494949;">Para guiarle hacia el formulario de vinculación correcto, requerimos registrar la información básica de su proyecto.</p>
                     <section id="border-questionnaire"></section>
@@ -102,6 +103,79 @@
             </div>
             
         </section>
+
+        <!-- Contenido principal de Cuestionario-preguntas -->
+         <section class = "dashboard-main-questionnaire-questions">
+            <!-- Esto es el header de cuando esta seleccionado cuestionaro -->
+            <header class="header-bar">
+                <h1 class="header-title">Cuestionario de Diagnóstico</h1>
+                <p style="color: var(--gris-texto)">Encuentra el formulario ideal para tu proyecto</p>
+            </header>
+
+            <div id ="questionnaire-questions-container">
+                <section class ="title-questionnaire-questions">
+                    <div id = "icon-questionnaire-questions">
+                        <i class="fa-solid fa-tag fa-lg"></i>
+                    </div>
+                    <div id = "section-title-questionnaire-questions">
+                        <p style="color: var(--gris-texto); font-size: 16px; font-weight: 600;">Trabajo:</p>
+                        <p style="color:#494949;">Diagnóstico comunitario en la paz, Comayagua</p>
+                    </div>
+
+                </section>
+
+                <!-- Barra de progreso del cuestionario -->
+                <section class="questionnaire-progress" id="questionnaire-progress">
+                    <div class="progress-header">
+                        <div class="progress-step">
+                            <span class="progress-question">Pregunta <span id="progress-current">3</span> de <span id="progress-total">10</span></span>
+                        </div>
+                        <span class="progress-percent"><span id="progress-percent-value">30</span>% completado</span>
+                    </div>
+                    <div class="progress-track" id="progress-bar" role="progressbar" aria-label="Progreso del cuestionario" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30">
+                        <div class="progress-fill" id="progress-fill" style="width: 30%;"></div>
+                    </div>
+                </section>
+
+                <!-- Pregunta actual del cuestionario -->
+                <section class="question-card" id="question-card">
+                    <div class="question-top">
+                        <button type="button" class="btn-exit" id="btn-exit-questionnaire">
+                            Salir del cuestionario
+                            <i class="fa-regular fa-circle-xmark"></i>
+                        </button>
+                    </div>
+
+                    <h2 class="question-title" id="question-title">¿La actividad involucra la prestación de servicios técnicos o profesionales a comunidades o instituciones externas?</h2>
+
+                    <div class="question-options" id="question-options" role="radiogroup" aria-labelledby="question-title">
+                        <label class="option-card">
+                            <input type="radio" name="question-answer" value="si" class="option-input" checked>
+                            <span class="option-icon"><i class="fa-solid fa-check"></i></span>
+                            <span class="option-text">
+                                <span class="option-title">Sí, involucra prestación de servicios</span>
+                                <span class="option-description">Servicios de laboratorio, consultoría técnica, diagnósticos especializados, capacitaciones específicas o dictámenes.</span>
+                            </span>
+                        </label>
+
+                        <label class="option-card">
+                            <input type="radio" name="question-answer" value="no" class="option-input">
+                            <span class="option-icon"><i class="fa-solid fa-xmark"></i></span>
+                            <span class="option-text">
+                                <span class="option-title">No, no involucra prestación</span>
+                                <span class="option-description">Es un proyecto de desarrollo social directo sin cobro, consultoría formal o acuerdos de carácter puramente técnico.</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="question-actions">
+                        <button type="button" class="btn-outline" id="btn-prev-question">Anterior</button>
+                        <button type="button" class="btn-start" id="btn-next-question">Siguiente</button>
+                    </div>
+                </section>
+            </div>
+
+         </section>
     </main>
 </body>
 
