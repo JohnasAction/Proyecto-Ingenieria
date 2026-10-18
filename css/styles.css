@@ -584,3 +584,132 @@ CUESTIONARIO MAIN */
     content: " *";
     color: red;
   }
+
+
+  /* ---------- Estilo del Cuestionario Incompleto ---------- */
+
+.dashboard-main-recommendations {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--fondo);
+}
+
+/* Encabezado */
+.recommendations-subtitle {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--gris-texto);
+}
+
+/* Contenedor del estado vacío */
+.recommendations-empty {
+    width: 100%;
+    min-height: 300px;
+    padding: 48px 32px;
+    background: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+/* Círculo del icono principal */
+.recommendations-empty-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+    border-radius: 50%;
+    background: var(--fondo);
+    color: var(--gris-texto);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+}
+
+/* Título del estado vacío */
+.recommendations-empty-title {
+    margin-bottom: 8px;
+    font-family: var(--font-titulo);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--texto-principal);
+}
+
+/* Texto explicativo */
+.recommendations-empty-description {
+    max-width: 760px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--gris-texto);
+}
+
+/* Botón para iniciar el cuestionario */
+.recommendations-start-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+
+    background: #d4af37;
+    color: var(--azul-oscuro);
+
+    font-family: var(--font-texto);
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.recommendations-start-button:hover {
+    filter: brightness(1.06);
+}
+
+.recommendations-start-button:focus-visible {
+    outline: 3px solid var(--azul-medio);
+    outline-offset: 3px;
+}
+
+.recommendations-start-button i {
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+/* Ajustes del contenido en pantallas pequeñas */
+@media (max-width: 600px) {
+    .dashboard-main-recommendations .header-bar {
+        padding: 20px;
+    }
+
+    .dashboard-main-recommendations .header-title {
+        font-size: 22px;
+    }
+
+    .recommendations-empty {
+        padding: 40px 20px;
+    }
+
+    .recommendations-empty-title {
+        font-size: 18px;
+    }
+
+    .recommendations-start-button {
+        max-width: 100%;
+    }
+}
+

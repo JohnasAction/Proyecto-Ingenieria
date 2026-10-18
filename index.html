@@ -105,7 +105,7 @@
         </section>
 
         <!-- Contenido principal de Cuestionario-preguntas -->
-         <section class = "dashboard-main-questionnaire-questions">
+         <section class = "dashboard-main-questionnaire-questions hide">
             <!-- Esto es el header de cuando esta seleccionado cuestionaro -->
             <header class="header-bar">
                 <h1 class="header-title">Cuestionario de Diagnóstico</h1>
@@ -125,7 +125,7 @@
                 </section>
 
                 <!-- Barra de progreso del cuestionario -->
-                <section class="questionnaire-progress" id="questionnaire-progress">
+                <section class="questionnaire-progress" id="questionnaire-progress hide">
                     <div class="progress-header">
                         <div class="progress-step">
                             <span class="progress-question">Pregunta <span id="progress-current">3</span> de <span id="progress-total">10</span></span>
@@ -138,7 +138,7 @@
                 </section>
 
                 <!-- Pregunta actual del cuestionario -->
-                <section class="question-card" id="question-card">
+                <section class="question-card" id="question-card hide">
                     <div class="question-top">
                         <button type="button" class="btn-exit" id="btn-exit-questionnaire">
                             Salir del cuestionario
@@ -176,6 +176,41 @@
             </div>
 
          </section>
+
+
+        <!-- Contenido de Cuestionario Incompleto-->
+        <section class="dashboard-main-recommendations" id="recommendations-section" aria-labelledby="recommendations-title">
+            <header class="header-bar">
+                <h1 class="header-title" id="recommendations-title">
+                     Historial de Recomendaciones
+                </h1>
+
+                <p class="recommendations-subtitle">
+                    Basado en los lineamientos de vinculación de la UNAH
+                </p>
+            </header>
+
+            <!-- Estado vacío: no hay cuestionarios completados -->
+            <div class="recommendations-empty">
+                <div class="recommendations-empty-icon">
+                    <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>
+                </div>
+
+                <h2 class="recommendations-empty-title">
+                    No hay cuestionarios completados
+                </h2>
+
+                <p class="recommendations-empty-description">
+                    Aún no has realizado ningún cuestionario. Inicia uno para
+                    recibir tu primera recomendación de vinculación social.
+                </p>
+
+                <button type="button" class="recommendations-start-button" id="btn-start-first-questionnaire">
+                    <i class="fa-regular fa-circle-play" aria-hidden="true"></i>
+                        <span>Iniciar mi primer cuestionario</span>
+                </button>
+                </div>
+            </section>
     </main>
 </body>
 
