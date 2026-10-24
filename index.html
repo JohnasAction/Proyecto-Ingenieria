@@ -179,7 +179,7 @@
 
 
         <!-- Contenido de Cuestionario Incompleto-->
-        <section class="dashboard-main-recommendations" id="recommendations-section" aria-labelledby="recommendations-title">
+        <section class="dashboard-main-recommendations  " id="recommendations-section" aria-labelledby="recommendations-title">
             <header class="header-bar">
                 <h1 class="header-title" id="recommendations-title">
                      Historial de Recomendaciones
@@ -211,6 +211,245 @@
                 </button>
                 </div>
             </section>
+
+
+        <!-- Pantalla: Cuestionario- ERROR -->
+        <section class="dashboard-main-error  hide " id="questionnaire-error-section"
+         aria-labelledby="questionnaire-error-title">
+
+            <!-- Encabezado de la pantalla -->
+            <header class="header-bar">
+                <h1 class="header-title" id="questionnaire-error-title">
+                    Cuestionario de Diagnóstico
+                </h1>
+
+                <p class="recommendations-subtitle">
+                    Encuentra el formulario ideal para tu proyecto
+                </p>
+            </header>
+
+            <!--  mensaje de error -->
+            <div class="questionnaire-error-content">
+
+                <!-- Icono  -->
+                <div class="questionnaire-error-icon">
+
+                    <!-- Hoja  -->
+                    <svg class="questionnaire-error-file"
+                        viewBox="0 0 40 44"
+                        aria-hidden="true">
+                        <path
+                            d="M8 3 H24 L34 13 V38 Q34 41 31 41 H8 Q5 41 5 38 V6 Q5 3 8 3 Z
+                            M24 3 V11 Q24 13 27 13 H34"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linejoin="round" />
+                    </svg>
+
+                    <i class="fa-solid fa-magnifying-glass questionnaire-error-search"
+                    aria-hidden="true"></i>
+
+                </div>
+
+                <!-- Título del mensaje -->
+                <h2 class="questionnaire-error-title">
+                    No se encontró una recomendación clara
+                </h2>
+
+                <!-- Descripción -->
+                <p class="questionnaire-error-description">
+                    Las respuestas cargadas no generaron coincidencia significativa
+                    con las líneas de vinculación institucional. Por favor, revise
+                    sus respuestas o contacte a la DVUS.
+                </p>
+
+                <!-- Botones de acción -->
+                <div class="questionnaire-error-actions">
+
+                    <button type="button" class="questionnaire-error-button">
+                        <span>Repetir cuestionario</span>
+                    </button>
+
+                    <button type="button"
+                            class="questionnaire-error-button-secondary">
+                        <span>Contactar a DVUS</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Pantalla: Resultado - Recomendación -->
+        <section class="dashboard-main-result hide  " id="result-section"
+         aria-labelledby="result-title">
+
+            
+            <header class="header-bar">
+                <h1 class="header-title" id="result-title">
+                    Historial de Recomendaciones 
+                </h1>
+
+                <p class="recommendations-subtitle">
+                    Basado en los lineamientos de vinculación de la UNAH
+                </p>
+            </header>
+            <div class="result-content">
+                <!-- Buscador y filtros -->
+                <div class="result-filters">
+                    <!-- Buscador -->
+                    <div class="result-search">
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        <input
+                            type="search"
+                            id="result-search-input"
+                            placeholder="Buscar por título de trabajo o actividad..."
+                            aria-label=""
+                        >
+                    </div> 
+                      <!-- Filtro por formulario -->
+                    <select id="result-form-filter" aria-label="Filtrar por formulario">
+                        <option value="todos">Formulario: Todos</option>
+                        <option value="F-001">F-001 Educación No Formal</option>
+                        <option value="F-002">F-002 Asistencia Técnica</option>
+                        <option value="F-003">F-003 Prestación de Servicios</option>
+                        <option value="F-004">F-004 Investigación Aplicada</option>
+                    
+                    </select> 
+                    <!-- Ordenar -->
+                    <select id="result-sort" aria-label="Ordenar recomendaciones">
+                        <option value="recientes">Ordenar por: Más recientes</option>
+                        <option value="antiguos">Ordenar por: Más antiguos</option>
+                        <option value="mayor">Mayor coincidencia</option>
+                        <option value="menor">Menor coincidencia</option>
+                    </select>
+                </div>   
+                 
+               
+                <!--/div-->
+                <!-- Lista de recomendaciones -->
+                <div class="result-list">
+                    <!-- Tarjeta 1 -->
+                    <article class="result-card">
+                        <div class="result-info">
+                            <h3>Diagnóstico comunitario en La Paz, Comayagua</h3>
+                            <p>Hace 5 días — 24 sept 2026 | Evaluado por Dr. Carlos Méndez</p>
+
+                        </div>
+                        <span class="result-tag tag-blue">
+                            <span class="tag-dot"></span>
+                            F-003 Prestación de Servicios
+                        </span>
+                        <div class="result-score">
+                            <strong>87%</strong>
+                            <span>coincidencia</span>
+
+                        </div>
+
+                        <span class="result-arrow">›</span>
+                    </article>
+                    <!-- Tarjeta 2 -->
+                    <article class="result-card">
+                        <div class="result-info">
+                            <h3>Programa de capacitación informática para adultos mayores</h3>
+                            <p>Hace 2 semanas — 18 sept 2026 | Evaluado por Dr. Carlos Méndez</p>
+                        </div>
+
+                        <span class="result-tag tag-green">
+                            <span class="tag-dot"></span>
+                            F-001 Educación No Formal
+                        </span>
+                        <div class="result-score">
+                            <strong>94%</strong>
+                            <span>coincidencia</span>
+                        </div>
+                        <span class="result-arrow">›</span>
+                    </article>
+                    <!-- Tarjeta 3 -->
+                    <article class="result-card">
+                        <div class="result-info">
+                            <h3>Asesoría técnica para PYMES agrícolas en Olancho</h3>
+                            <p>Hace 1 mes — 02 sept 2026 | Evaluado por Dr. Carlos Méndez</p>
+
+                        </div>
+                        <span class="result-tag tag-blue">
+                            <span class="tag-dot"></span>
+                            F-003 Prestación de Servicios
+                        </span>
+                        <div class="result-score">
+                            <strong>65%</strong>
+                            <span>coincidencia</span>
+                        </div>
+                        <span class="result-arrow">›</span>
+                    </article>
+                    <!-- Tarjeta 4 -->
+                    <article class="result-card">
+                        <div class="result-info">
+                        <h3>Brigada odontológica integral escolar en Tegucigalpa</h3>
+                        <p>Hace 1 mes — 28 ago 2026 | Evaluado por Dr. Carlos Méndez</p>
+                        </div>
+                        <span class="result-tag tag-orange">
+                            <span class="tag-dot"></span>
+                            F-002 Asistencia Técnica
+
+                        </span>
+                        <div class="result-score">
+                            <strong>78%</strong>
+                            <span>coincidencia</span>
+                        </div>
+                        <span class="result-arrow">›</span>
+                    </article>
+                    <!-- Tarjeta 5 -->
+                    <article class="result-card">
+                        <div class="result-info">
+                            <h3>Investigación-acción participativa en cuencas de Intibucá</h3>
+                            <p>Hace 2 meses — 10 jul 2026 | Evaluado por Dr. Carlos Méndez</p>
+                        </div>
+                        <span class="result-tag tag-red">
+                            <span class="tag-dot"></span>
+                            F-004 Investigación Aplicada
+                        </span>
+                        <div class="result-score">
+                            <strong>41%</strong>
+                            <span>coincidencia</span>
+
+                        </div>
+
+                        <span class="result-arrow">›</span>
+                    </article>
+
+
+
+                </div>
+                <div class="result-pagination">
+                    <p class="result-pagination-info">
+                        Mostrando 1-5 de 12 resultados
+                    </p>
+                    <div class="result-pagination-buttons">
+                        <button type="button" class="page-button" aria-label="Página anterior">
+                            ‹
+                        </button>
+                        <button type="button" class="page-button active" aria-current="page">
+                            1
+                        </button>
+                        <button type="button" class="page-button">
+                            2
+                        </button>
+                        <button type="button" class="page-button">
+                            3
+                        </button>
+                        <button type="button" class="page-button" aria-label="Página siguiente">
+                            ›
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+        
+
+        </section>
     </main>
 </body>
 
