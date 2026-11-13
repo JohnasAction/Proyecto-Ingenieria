@@ -58,7 +58,7 @@
         </aside>
 
         <!-- Contenido principal de inicio-->
-        <section class="dashboard-main-home hide">
+        <section class="dashboard-main-home">
             <header class="header-bar">
                 <h1 class="header-title">Bienvenido, Dr. Méndez</h1>
             </header> 
@@ -76,6 +76,33 @@
             </section>
 
             
+        </section>
+
+        <!-- Contenido principal de cuestionarios guardados -->
+        <section class="dashboard-main-result hide" id="saved-section">
+            <header class="header-bar">
+                <h1 class="header-title">Cuestionario de Diagnóstico</h1>
+                <p style="color: var(--gris-texto)">Encuentra el formulario ideal para tu proyecto</p>
+            </header>
+
+            <div class="result-content">
+                <div class="result-list">
+                    <article class="result-card">
+                        <div class="result-info">
+                            <h3>Diagnóstico comunitario en La Paz, Comayagua</h3>
+                            <p>Hace 5 días — 24 sept 2026</p>
+                        </div>
+                        <span class="saved-status">Cuestionario Pendiente</span>
+                        <span class="result-tag tag-blue saved-pill">
+                            <span class="tag-dot"></span>
+                            Pregunta 7/10
+                        </span>
+                        <button type="button" class="saved-continue">
+                            Continuar <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </article>
+                </div>
+            </div>
         </section>
 
         <!-- Contenido principal de cuestionario -->
@@ -178,8 +205,71 @@
          </section>
 
 
+        <!-- Pantalla: Resultado de la recomendación -->
+        <section class="dashboard-main-reco hide" id="recommendation-result-section" aria-labelledby="reco-heading">
+            <header class="header-bar">
+                <h1 class="header-title" id="reco-heading">Cuestionario de Diagnóstico</h1>
+                <p style="color: var(--gris-texto)">Encuentra el formulario ideal para tu proyecto</p>
+            </header>
+
+            <div class="reco-container">
+                <article class="reco-card">
+                    <div class="reco-top">
+                        <span class="reco-badge">Vinculación identificada</span>
+                        <span class="reco-match">87% de coincidencia</span>
+                    </div>
+
+                    <div class="reco-heading">
+                        <p class="reco-code">Formulario 003</p>
+                        <h2 class="reco-title">Prestación de Servicios Técnicos y Profesionales</h2>
+                    </div>
+
+                    <p class="reco-description">
+                        Según sus respuestas, su actividad se alinea principalmente con la prestación de servicios técnicos o profesionales dirigidos a comunidades, instituciones u organizaciones externas a la universidad. Este registro valida la transferencia de conocimiento especializado institucional hacia la sociedad hondureña.
+                    </p>
+
+                    <hr class="reco-divider">
+
+                    <h3 class="reco-compare-title">Comparación de formularios analizados</h3>
+
+                    <div class="reco-note">
+                        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                        <p>Nota: En caso de empate entre dos o más formularios, la recomendación deberá ser validada por la Dirección de Vinculación Universidad-Sociedad (DVUS) antes de proceder con el registro.</p>
+                    </div>
+
+                    <div class="reco-bars">
+                        <div class="reco-bar-row">
+                            <span class="reco-bar-label">F-001 Proyectos de Desarrollo Local</span>
+                            <div class="reco-bar-track"><div class="reco-bar-fill bar-medio" style="width: 42%;"></div></div>
+                            <span class="reco-bar-value">42%</span>
+                        </div>
+                        <div class="reco-bar-row">
+                            <span class="reco-bar-label">F-002 Asesorías y Consultorías</span>
+                            <div class="reco-bar-track"><div class="reco-bar-fill bar-profundo" style="width: 65%;"></div></div>
+                            <span class="reco-bar-value">65%</span>
+                        </div>
+                        <div class="reco-bar-row reco-bar-selected">
+                            <span class="reco-bar-label">F-003 Prestación de Servicios</span>
+                            <div class="reco-bar-track"><div class="reco-bar-fill bar-dorado" style="width: 87%;"></div></div>
+                            <span class="reco-bar-value">87%</span>
+                        </div>
+                        <div class="reco-bar-row">
+                            <span class="reco-bar-label">F-004 Prácticas Educativas</span>
+                            <div class="reco-bar-track"><div class="reco-bar-fill bar-gris" style="width: 31%;"></div></div>
+                            <span class="reco-bar-value">31%</span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="reco-retry" id="btn-retry-questionnaire">
+                        <i class="fa-solid fa-rotate" aria-hidden="true"></i>
+                        Realizar otro cuestionario
+                    </button>
+                </article>
+            </div>
+        </section>
+
         <!-- Contenido de Cuestionario Incompleto-->
-        <section class="dashboard-main-recommendations  " id="recommendations-section" aria-labelledby="recommendations-title">
+        <section class="dashboard-main-recommendations hide" id="recommendations-section" aria-labelledby="recommendations-title">
             <header class="header-bar">
                 <h1 class="header-title" id="recommendations-title">
                      Historial de Recomendaciones
@@ -451,6 +541,54 @@
 
         </section>
     </main>
+    <script>
+        const secciones = document.querySelectorAll('.panel-docente > section');
+        const navItems = document.querySelectorAll('.nav-list .nav-item');
+        const destinos = ['.dashboard-main-home', '#saved-section', '#recommendations-section'];
+
+        function mostrar(selector) {
+            secciones.forEach(s => s.classList.add('hide'));
+            document.querySelector(selector).classList.remove('hide');
+        }
+
+        function activar(item) {
+            navItems.forEach(n => {
+                const on = n === item;
+                n.classList.toggle('active', on);
+                const icono = n.querySelector('i');
+                icono.classList.toggle('selected', on);
+                icono.classList.toggle('unselected', !on);
+            });
+        }
+
+        navItems.forEach((item, i) => {
+            item.addEventListener('click', e => {
+                e.preventDefault();
+                activar(item);
+                mostrar(destinos[i]);
+            });
+        });
+
+        document.querySelector('.saved-continue').addEventListener('click', () => {
+            mostrar('.dashboard-main-questionnaire-questions');
+        });
+
+        // Resultado de la recomendación: se abre al terminar el cuestionario
+        // o al pulsar una tarjeta del historial
+        document.getElementById('btn-next-question').addEventListener('click', () => {
+            mostrar('#recommendation-result-section');
+        });
+
+        document.querySelectorAll('#result-section .result-card').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', () => mostrar('#recommendation-result-section'));
+        });
+
+        // Repetir: vuelve al inicio del cuestionario
+        document.getElementById('btn-retry-questionnaire').addEventListener('click', () => {
+            mostrar('.dashboard-main-questionnaire');
+        });
+    </script>
 </body>
 
 </html>
