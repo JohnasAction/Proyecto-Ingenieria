@@ -58,7 +58,7 @@
         </aside>
 
         <!-- Contenido principal de inicio-->
-        <section class="dashboard-main-home">
+        <section class="dashboard-main-home hide">
             <header class="header-bar">
                 <h1 class="header-title">Bienvenido, Dr. Méndez</h1>
             </header> 
@@ -540,6 +540,118 @@
         
 
         </section>
+
+        <!-- Pantalla: Detalle de recomendación (resultado-recomendacion2) -->
+<section class="dashboard-main-detalle" id="recommendation-detail-section" aria-labelledby="detalle-title">
+    <header class="header-bar">
+        <h1 class="header-title" id="detalle-title">Historial de Recomendaciones</h1>
+        <p class="recommendations-subtitle">Basado en los lineamientos de vinculación de la UNAH</p>
+    </header>
+
+    <div class="detalle-content">
+        <button type="button" class="detalle-back" id="btn-back-history">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            Volver al historial
+        </button>
+
+        <!-- Trabajo evaluado -->
+        <section class="detalle-work">
+            <p class="detalle-work-label">Trabajo evaluado</p>
+            <h2 class="detalle-work-title">Diagnóstico comunitario en La Paz, Comayagua</h2>
+            <p class="detalle-work-date">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                Cuestionario completado el 24 de septiembre de 2026
+            </p>
+        </section>
+
+        <div class="detalle-grid">
+            <!-- Recomendación del sistema -->
+            <article class="detalle-card">
+                <div class="detalle-card-top">
+                    <h3 class="detalle-card-label">Recomendación del sistema</h3>
+                    <span class="detalle-match">
+                        <span class="detalle-match-dot"></span>
+                        87% Coincidencia
+                    </span>
+                </div>
+
+                <h2 class="detalle-reco-title">Formulario 003 — Prestación de Servicios Técnicos y Profesionales</h2>
+
+                <p class="detalle-reco-text">
+                    Según sus respuestas, su actividad se alinea principalmente con la prestación de servicios técnicos o profesionales dirigidos a comunidades, instituciones u organizaciones externas a la universidad. Este registro valida la transferencia de conocimiento especializado institucional hacia la sociedad hondureña.
+                </p>
+
+                <hr class="detalle-divider">
+
+                <h4 class="detalle-steps-title">Próximos Pasos Recomendados:</h4>
+                <ol class="detalle-steps">
+                    <li>Descargue el informe oficial de recomendación adjunto abajo.</li>
+                    <li>Complete los campos específicos requeridos en el Formulario F-003.</li>
+                    <li>Presente la documentación ante la coordinación de la Dirección de Vinculación Universidad-Sociedad (DVUS).</li>
+                </ol>
+            </article>
+
+            <!-- Análisis de afinidades -->
+            <article class="detalle-card">
+                <h3 class="detalle-card-label detalle-card-label-lg">Análisis de afinidades</h3>
+
+                <div class="detalle-bars">
+                    <div class="detalle-bar-row">
+                        <div class="detalle-bar-name">
+                            <strong>F-001</strong>
+                            <span>Educación No Formal</span>
+                        </div>
+                        <div class="detalle-bar-track"><div class="detalle-bar-fill" style="width: 42%;"></div></div>
+                        <span class="detalle-bar-value">42%</span>
+                    </div>
+
+                    <div class="detalle-bar-row">
+                        <div class="detalle-bar-name">
+                            <strong>F-002</strong>
+                            <span>Asistencia Técnica</span>
+                        </div>
+                        <div class="detalle-bar-track"><div class="detalle-bar-fill" style="width: 65%;"></div></div>
+                        <span class="detalle-bar-value">65%</span>
+                    </div>
+
+                    <div class="detalle-bar-row detalle-bar-selected">
+                        <div class="detalle-bar-name">
+                            <strong>F-003</strong>
+                            <span>Prestación de Servicios</span>
+                        </div>
+                        <div class="detalle-bar-track"><div class="detalle-bar-fill" style="width: 87%;"></div></div>
+                        <span class="detalle-bar-value">87%</span>
+                    </div>
+
+                    <div class="detalle-bar-row">
+                        <div class="detalle-bar-name">
+                            <strong>F-004</strong>
+                            <span>Investigación Aplicada</span>
+                        </div>
+                        <div class="detalle-bar-track"><div class="detalle-bar-fill" style="width: 31%;"></div></div>
+                        <span class="detalle-bar-value">31%</span>
+                    </div>
+                </div>
+
+                <p class="detalle-bars-note">
+                    El análisis comparativo evalúa los pesos ponderados del cuestionario frente a los objetivos regulados de cada formulario de vinculación oficial.
+                </p>
+            </article>
+        </div>
+
+        <!-- Acciones -->
+        <div class="detalle-actions">
+            <button type="button" class="detalle-btn detalle-btn-gold" id="btn-download-reco">
+                <i class="fa-solid fa-download" aria-hidden="true"></i>
+                Descargar recomendación
+            </button>
+            <button type="button" class="detalle-btn detalle-btn-light" id="btn-retry-detalle">
+                <i class="fa-solid fa-rotate" aria-hidden="true"></i>
+                Realizar otro cuestionario
+            </button>
+        </div>
+    </div>
+</section>
     </main>
     <script>
         const secciones = document.querySelectorAll('.panel-docente > section');
